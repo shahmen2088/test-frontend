@@ -4,7 +4,7 @@ body {
     font-family: Montserrat, sans-serif;
     font-size: 14px;
     color: #ffffff;
-    background-color: #fff;
+    background-color: #161615;
 
     -webkit-font-smoothing: antialiased;
 
@@ -44,7 +44,7 @@ li {
     width: 100%;
     max-width: 1360px;
     margin: 0 auto;
-    padding: 0 15px;
+    /* padding: 0 15px; */
 }
 
 
@@ -195,6 +195,47 @@ li {
     transition: .1s;
 } */
 
+
+/* Main  */
+
+.main__inner {
+    /* display: flex; */
+
+    padding-top: 86px;
+}
+
+.main__inner-title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    margin-bottom: 16px;
+}
+
+
+/* Main Items  */
+
+
+.main-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.main-item {
+    height: 368px;
+    max-width: 210px;
+    width: 100%;
+    margin-right: 20px;
+    margin-bottom: 16px;
+}
+
+
+
+.main-poster img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
 
 @media (max-width: 744px) {
 

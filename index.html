@@ -2,18 +2,28 @@
 <html lang="en">
 
 <head>
+    <!--Meta Data-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
+    <!--Font Awesome Icons-->
     <script src="https://kit.fontawesome.com/6dcb1781a3.js" crossorigin="anonymous"></script>
+
+    <!--CSS and JavaScript-->
     <link rel="stylesheet" href="./css/style.css">
+
+    <!--Title-->
     <title>MOVIE</title>
 </head>
 
 <body>
+    <!--Header Bar-->
     <header class="header" id="header">
         <div class="container">
             <div class="header__inner">
@@ -30,7 +40,7 @@
                         <li>Сериалы</li>
                     </a>
                 </nav>
-                <input class="header__inner__search" type="search" placeholder="Поиск по сайту">
+                <input class="header__inner__search" type="search" placeholder="Поиск по сайту" id="input">
                 <div class="header__inner__buttons">
                     <div class="header__inner__buttons-item"><a href="#"><svg width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,9 +63,27 @@
             </div>
 
     </header>
+    <!--Main Content Container-->
     <main class="main">
+
+        <div class="container">
+            <div class="main__inner">
+                <h2 class="main__inner-title">Популярные</h2>
+
+                <!-- Search Items Display Section -->
+                <div class="main-container">
+                    <!-- Items are displayed here -->
+                </div>
+                <!--Watermark Area / Start Exploring Section-->
+                <!-- <div class="start-exploring">
+                    <i class="fa-solid fa-film fa-6x"></i><br>
+                    <span>Start Exploring!</span>
+                </div> -->
+            </div>
+        </div>
     </main>
     <footer class="footer"></footer>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
