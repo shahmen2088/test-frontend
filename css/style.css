@@ -25,10 +25,14 @@ h6 {
     margin: 0;
 }
 
-a:active,
-a:hover,
 a {
+    color: #737373;
     text-decoration: none;
+}
+
+a:active,
+a:hover
+{
     color: #ffffff;
 }
 
@@ -65,6 +69,7 @@ input:active,
 button:focus,
 button:active {
     outline: none;
+    /* border: none; */
 }
 
 button::-moz-focus-inner {
@@ -109,7 +114,12 @@ button::-moz-focus-inner {
     margin-right: 180px;
 }
 
+.header__inner form {
+    position: relative;
+}
+
 .header__inner-search {
+    position: relative;
     background-image: url('../img/search__icons.png');
     background-size: 15px;
     background-position: 158px center;
@@ -118,18 +128,39 @@ button::-moz-focus-inner {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
+    border: 0;
     border-radius: 4px;
     padding: 10px 5px 10px 20px;
     text-indent: 20px;
     -webkit-transition: all 0.2s;
     -moz-transition: all 2s;
-    transition: all 0.2s;
+    transition: all 0.4s;
     width: 427px;
     height: 32px;
     text-align: center;
     font-weight: 300;
+    color: #fff;
     background-color: #161615;
 }
+
+.header__inner-search:hover {
+    background-position: 10px center;
+    text-align: left;
+    text-overflow: unset;
+}
+
+.header__inner-search:hover::placeholder {
+    color: transparent;
+  }
+
+  .header__inner-search--delete{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 8px 10px;
+  }
+
 
 .header__inner-buttons {
     display: flex;
@@ -309,12 +340,13 @@ button::-moz-focus-inner {
 .movie-poster {
     position: absolute;
     /* left: 25%; */
-    display: none;
+    display: flex;
     align-items: center;
     width: 100%;
     max-width: 900px;
     height: 960px;
     border-radius: 16px;
+    color: #fff;
 
     background-image: url('../img/Image.png');
     background-size: 900px;
@@ -390,6 +422,32 @@ button::-moz-focus-inner {
 
 .movie-poster__inner--categories li:first-child {
     list-style: none;
+}
+
+/* Modal */
+
+
+.modal {
+   width: 900px;
+   height: 960px;
+    border: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #161615;
+ 
+}
+
+.show-modal-btn {
+    color: #fff;
+}
+
+.close-modal-btn {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    right: 24px;
+    top: 24px;
+
 }
 
 @media (max-width: 744px) {
