@@ -2,28 +2,31 @@
 
 const key = 'e992c620';
 
-var searchInput = document.getElementById('input');
-var displaySearchList = document.getElementsByClassName('main-container');
+let searchInput = document.getElementById('input');
+let displaySearchList = document.getElementsByClassName('main-container');
 
-fetch('http://www.omdbapi.com/?i=tt3896198&apikey=e992c620')
-    .then(res => res.json())
-    .then(data => console.log(data));
+// fetch('http://www.omdbapi.com/?i=tt3896198&apikey=e992c620')
+//     .then(res => res.json())
+//     .then(data => console.log(data));
 
 searchInput.addEventListener('input', findMovies);
 
 
 async function displayMovieList(movies) {
-    var output = '';
+
+    let output = '';
     for (i of movies) {
 
-        var img = '';
+        let img = '';
+        
         if (i.Poster != 'N/A') {
             img = i.Poster;
         }
         else {
             img = 'img/blank-poster.webp';
         }
-        var id = i.imdbID;
+        let id = i.imdbID;
+       
 
         output += `
         <div class="main-item">
@@ -34,7 +37,6 @@ async function displayMovieList(movies) {
                 <div class="main-details-box">
                     <div>
                         <p class="main-movie-name"><a href="movie.html?id=${id}">${i.Title}</a></p>
-                        <p class="main-movie-rating"><a href="movie.html?id=${id}">${i.Year}</a></p>
                     </div>
                     <div>
                          <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
@@ -51,12 +53,12 @@ async function displayMovieList(movies) {
 
 
 async function findMovies() {
-    const url = `https://www.omdbapi.com/?s=${(searchInput.value).trim()}&page=1&apikey=${key}`
+    const url = `https://www.omdbapi.com/?s=${(searchInput.value).trim()}&page=1&apikey=${key}`;
     const res = await fetch(`${url}`);
     const data = await res.json();
 
     if (data.Search) {
-      
+        console.log(data)
         displayMovieList(data.Search)
     }
 }
