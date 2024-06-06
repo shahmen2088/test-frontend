@@ -32,6 +32,7 @@
     display: flex;
     align-items: center;
     width: 220px;
+    /* color: var(--color-black); */
     height: 44px;
     border-radius: 2px;
     padding: 0 62px 0 62px;
@@ -40,9 +41,7 @@
     margin-right: 24px;
 }
 
-.movie-poster__inner--buttons--watch svg {
-    margin-right: 8px;
-}
+
 
 .movie-poster__inner--buttons--fav {
     margin-right: 24px;
