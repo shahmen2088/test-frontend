@@ -16,7 +16,13 @@
     <script src="https://kit.fontawesome.com/6dcb1781a3.js" crossorigin="anonymous"></script>
 
     <!--CSS and JavaScript-->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/vars.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/poster.css">
+    
 
     <!--Title-->
     <title>MOVIE</title>
@@ -27,62 +33,32 @@
     <header class="header" id="header">
         <div class="container">
             <div class="header__inner">
-                <div class="header__inner-burger"> <span>Menu</span></div>
-                <div class="header__inner-logo"><a href="#"><svg width="123" height="22" viewBox="0 0 123 22"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M26.76 1.7H20.928L13.896 13.556L6.86398 1.7H1.03198V18.5H5.35198V6.98L12.336 18.5H15.456L22.44 6.98V18.5H26.76V1.7Z"
-                                fill="white" />
-                            <path
-                                d="M48.5 20.5C61.4079 20.5 67 17.0958 67 10.9736C67 4.87778 61.4079 1.5 48.5 1.5C35.55 1.5 30 4.85139 30 10.9736C30 17.1222 35.55 20.5 48.5 20.5ZM48.5 17C40.6375 17 36 14.7736 36 10.9736C36 7.2 40.5954 5 48.5 5C56.4045 5 61 7.22639 61 10.9736C61 14.7472 56.3625 17 48.5 17Z"
-                                fill="#D22F26" />
-                            <path d="M88.128 1.7L81.384 15.308L74.64 1.7H69.792L78.432 18.5H84.336L92.976 1.7H88.128Z"
-                                fill="white" />
-                            <path d="M100.329 1.7H96.0085V18.5H100.329V1.7Z" fill="white" />
-                            <path
-                                d="M122.003 5.132V1.7H104.243V18.5H122.003V15.068H108.563V11.66H122.003V8.54H108.563V5.132H122.003Z"
-                                fill="white" />
-                        </svg>
+                <button class="header__inner-burger"> <img src="./img/images/Type=Menu.png" alt=""></button>
+                <div class="header__inner-logo"><a href="#"><img src="./img/icons/Logo.svg" alt="logo">
                     </a></div>
                 <nav class="nav" id="nav">
-                    <a class="nav__link" href="#">
-                        <li>Главная</li>
-                    </a>
-                    <a class="nav__link" href="#">
-                        <li>Фильмы</li>
-                    </a>
-                    <a class="nav__link" href="#">
-                        <li>Сериалы</li>
-                    </a>
+                    <ul>
+                        <li class="nav__link"><a href="#">Главная</a></li>
+                        <li class="nav__link"><a href="#">Фильмы</a></li>
+                        <li class="nav__link"><a href="#">Сериалы</a></li>
+                    </ul>
                 </nav>
                 <form>
                     <input class="header__inner-search" type="search" placeholder="Поиск по сайту" id="input">
-                    <p class="header__inner-search--delete">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="16" height="16" rx="8" fill="#737373" />
-                            <path
-                                d="M11.5 5.205L10.795 4.5L8 7.295L5.205 4.5L4.5 5.205L7.295 8L4.5 10.795L5.205 11.5L8 8.705L10.795 11.5L11.5 10.795L8.705 8L11.5 5.205Z"
-                                fill="#090808" />
-                        </svg>
-                    </p>
-
+                    <button class="header__inner-search--delete">
+                        <img src="./img/images/Type=Cancel.png" alt="close">
+                    </button>
                 </form>
                 <div class="header__inner-buttons">
-                    <div class="header__inner__button-item"><a href="#"><svg width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M17 3H7C5.9 3 5 3.9 5 5V21L12 18L19 21V5C19 3.9 18.1 3 17 3ZM17 18L12 15.82L7 18V5H17V18Z"
-                                    fill="#E6E6E6" />
-                            </svg>
+                    <button class="header__inner__button-item"><a href="#"><img src="./img/images/Type=Bookmark.png"
+                                alt="bookmark">
                         </a>
-                    </div>
+                    </button>
                     <div class="header__inner__buttons-item">
-                        <div class="header__inner__buttons-item-logo"></div>
-                        <div class="header__inner__buttons-item-button"><svg width="10" height="5" viewBox="0 0 10 5"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0L5 5L10 0H0Z" fill="#E6E6E6" />
-                            </svg>
-                        </div>
+                        <button class="header__inner__buttons-item-logo"></button>
+                        <button class="header__inner__buttons-item-button"><img src="./img/images/Type=Arrow.png"
+                                alt="arrow">
+                        </button>
 
                     </div>
                 </div>
@@ -90,194 +66,53 @@
 
     </header>
     <!--Main Content Container-->
-    <main class="main">
+    <main class="main" id="main">
 
-        <div class="container">
-            <div class="main__inner">
+        <section>
+            <div class="container">
                 <h2 class="main__inner-title">Популярные</h2>
 
-                <!-- Search Items Display Section -->
                 <div id="" class="main-container">
                     <!-- Items are displayed here -->
 
                 </div>
-
             </div>
-        </div>
+        </section>
+
     </main>
     <footer class="footer" id="footer">
-        <div class="container">
-            <div class="footer__container">
-                <div class="footer__item">
-                    <div class="footer__item-logo"><svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M14.4 14.5H10.4V20.5H3.9V9.62354C3.9 9.54568 3.93628 9.47225 3.99814 9.42495L12.2481 3.11613C12.3378 3.04758 12.4622 3.04758 12.5519 3.11613L20.8019 9.42495C20.8637 9.47225 20.9 9.54568 20.9 9.62354V20.5H14.4V14.5Z"
-                                fill="#737373" />
-                        </svg>
+        <!-- <div class="container"> -->
+            <ul class="footer__container">
+                <li class="footer__item">
+                    <div class="footer__item-logo"><img src="./img/images/Type=Home.png" alt="">
                     </div>
                     <span class="footer__item-text">Дом</span>
-                </div>
-                <div class="footer__item">
-                    <div class="footer__item-logo"><svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g opacity="0.89">
-                                <path
-                                    d="M4.82317 6.90853C4.74365 6.362 5.12224 5.85449 5.66877 5.77497L13.5854 4.62307C14.1319 4.54355 14.6394 4.92214 14.719 5.46867L14.8999 6.71214H16.921L16.5541 4.19111C16.3951 3.09805 15.3801 2.34088 14.287 2.49993L4.39121 3.93979C3.29815 4.09884 2.54098 5.11387 2.70003 6.20693L4.13989 16.1027C4.28486 17.099 5.14093 17.8162 6.11905 17.815V15.8871C6.11905 15.8389 6.11557 15.7908 6.10863 15.7431L4.82317 6.90853Z"
-                                    fill="#E6E6E6" />
-                                <path
-                                    d="M12.421 17.6159V11.3841C12.421 11.2223 12.6031 11.1275 12.7356 11.2203L17.1869 14.3362C17.3006 14.4158 17.3006 14.5842 17.1869 14.6638L12.7356 17.7797C12.6031 17.8725 12.421 17.7777 12.421 17.6159Z"
-                                    fill="#E6E6E6" />
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M19.421 7.5H9.42096C8.31639 7.5 7.42096 8.39543 7.42096 9.5V19.5C7.42096 20.6046 8.31639 21.5 9.42096 21.5H19.421C20.5255 21.5 21.421 20.6046 21.421 19.5V9.5C21.421 8.39543 20.5255 7.5 19.421 7.5ZM18.421 9.5L10.421 9.5C9.86867 9.5 9.42096 9.94772 9.42096 10.5V18.5C9.42096 19.0523 9.86867 19.5 10.421 19.5H18.421C18.9732 19.5 19.421 19.0523 19.421 18.5V10.5C19.421 9.94771 18.9732 9.5 18.421 9.5Z"
-                                    fill="#E6E6E6" />
-                                <path
-                                    d="M5.59677 5.28018C4.77698 5.39946 4.2091 6.16073 4.32838 6.98053L5.61384 15.8151C5.61731 15.839 5.61905 15.863 5.61905 15.8871V17.2294C5.11129 17.0494 4.71762 16.6008 4.63468 16.0307L3.19482 6.13493C3.07553 5.31514 3.64341 4.55387 4.46321 4.43458L14.359 2.99472C15.1788 2.87543 15.9401 3.44331 16.0594 4.26311L16.3429 6.21214H15.3324L15.2138 5.39667C15.0945 4.57688 14.3332 4.009 13.5134 4.12828L5.59677 5.28018ZM16.5491 14.5L12.921 17.0397V11.9603L16.5491 14.5ZM16.9002 14.7458C16.9 14.7456 16.8998 14.7455 16.8996 14.7454L16.9002 14.7458ZM16.8996 14.2546C16.8998 14.2545 16.9 14.2544 16.9002 14.2542L16.8996 14.2546ZM9.42096 8H19.421C20.2494 8 20.921 8.67157 20.921 9.5V19.5C20.921 20.3284 20.2494 21 19.421 21H9.42096C8.59253 21 7.92096 20.3284 7.92096 19.5V9.5C7.92096 8.67157 8.59253 8 9.42096 8ZM18.421 9L10.421 9C9.59253 9 8.92096 9.67157 8.92096 10.5V18.5C8.92096 19.3284 9.59253 20 10.421 20H18.421C19.2494 20 19.921 19.3284 19.921 18.5V10.5C19.921 9.67157 19.2494 9 18.421 9Z"
-                                    stroke="#E6E6E6" />
-                            </g>
-                        </svg>
+                </li>
+                <li class="footer__item">
+                    <div class="footer__item-logo"><img src="./img/images/Type=Movie.png" alt="">
                     </div>
                     <span class="footer__item-text">Фильмы</span>
-                </div>
-                <div class="footer__item">
-                    <div class="footer__item-logo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M12 20.5C16.9706 20.5 20.5 16.9706 20.5 12C20.5 7.02944 16.9706 3.5 12 3.5C7.02944 3.5 3.5 7.02944 3.5 12C3.5 16.9706 7.02944 20.5 12 20.5ZM12 22.5C18.0751 22.5 22.5 18.0751 22.5 12C22.5 5.92487 18.0751 1.5 12 1.5C5.92487 1.5 1.5 5.92487 1.5 12C1.5 18.0751 5.92487 22.5 12 22.5Z"
-                                fill="#737373" />
-                            <path
-                                d="M5.27551 11H7.27551L7.32675 10.8359C7.43458 10.4907 7.6224 10.1405 7.97045 10.0423C8.06648 10.0152 8.16855 10 8.27551 10C8.38247 10 8.48453 10.0152 8.58056 10.0423C8.92861 10.1405 9.11644 10.4907 9.22426 10.8359L9.27551 11H11.2755C11.2755 10.6363 11.141 9.80534 11 9.55855C10.8491 9.29444 10.6413 9.03953 10.3915 8.81656C9.89187 8.37044 9.16278 8 8.27551 8C7.38823 8 6.65915 8.37044 6.15949 8.81656C5.90976 9.03953 5.70193 9.29444 5.55101 9.55855C5.40999 9.80534 5.27551 10.6363 5.27551 11Z"
-                                fill="#737373" />
-                            <path
-                                d="M13 11H15L15.0512 10.8359C15.1591 10.4907 15.3469 10.1405 15.6949 10.0423C15.791 10.0152 15.893 10 16 10C16.107 10 16.209 10.0152 16.305 10.0423C16.6531 10.1405 16.8409 10.4907 16.9487 10.8359L17 11H19C19 10.6363 18.8655 9.80534 18.7245 9.55855C18.5736 9.29444 18.3657 9.03953 18.116 8.81656C17.6164 8.37044 16.8873 8 16 8C15.1127 8 14.3836 8.37044 13.884 8.81656C13.6342 9.03953 13.4264 9.29444 13.2755 9.55855C13.1345 9.80534 13 10.6363 13 11Z"
-                                fill="#737373" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M10.7177 17.5308C8.64439 17.1191 7.04938 15.7325 6.2 14.6L7.8 13.4C8.45062 14.2675 9.65561 15.2809 11.1073 15.5692C12.4704 15.8398 14.257 15.5125 16.2628 13.3243L17.7372 14.6757C15.343 17.2875 12.8796 17.9602 10.7177 17.5308Z"
-                                fill="#737373" />
-                        </svg>
+                </li>
+                <li class="footer__item">
+                    <div class="footer__item-logo"><img src="./img/images/Type=Series.png" alt="">
                     </div>
                     <span class="footer__item-text">Сериалы</span>
-                </div>
-                <div class="footer__item">
-                    <div class="footer__item-logo"><svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_1972_1243)">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M11.8 18C15.666 18 18.8 14.866 18.8 11C18.8 7.13401 15.666 4 11.8 4C7.93403 4 4.80002 7.13401 4.80002 11C4.80002 14.866 7.93403 18 11.8 18ZM11.8 20C13.9138 20 15.8574 19.2713 17.3932 18.0514C17.964 17.598 18.4785 17.0768 18.9245 16.5C20.1004 14.9791 20.8 13.0712 20.8 11C20.8 6.02944 16.7706 2 11.8 2C6.82946 2 2.80002 6.02944 2.80002 11C2.80002 15.9706 6.82946 20 11.8 20Z"
-                                    fill="#737373" />
-                                <path
-                                    d="M22.626 20.674C22.7226 20.5775 22.7238 20.4213 22.6288 20.3233L18.9245 16.5C18.4785 17.0768 17.964 17.598 17.3932 18.0514L21.1232 21.8213C21.2207 21.9199 21.3797 21.9203 21.4777 21.8223L22.626 20.674Z"
-                                    fill="#737373" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_1972_1243">
-                                    <rect width="24" height="24" fill="white" transform="translate(0.800018)" />
-                                </clipPath>
-                            </defs>
-                        </svg>
+                </li>
+                <li class="footer__item">
+                    <div class="footer__item-logo"><img src="./img/images/search bar controls.png" alt="">
                     </div>
                     <span class="footer__item-text">Поиск</span>
-                </div>
-                <div class="footer__item">
-                    <div class="footer__item-logo"><svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M17.6 3H7.60004C6.50004 3 5.60004 3.9 5.60004 5V21L12.6 18L19.6 21V5C19.6 3.9 18.7 3 17.6 3ZM17.6 18L12.6 15.82L7.60004 18V5H17.6V18Z"
-                                fill="#737373" />
-                        </svg>
+                </li>
+                <li class="footer__item">
+                    <div class="footer__item-logo"><img src="./img/images/Type=Share.png" alt="">
                     </div>
                     <span class="footer__item-text">Избранное</span>
-                </div>
-            </div>
-        </div>
+                </li>
+            </ul>
+        <!-- </div> -->
     </footer>
-
-    <!-- <dialog class="modal" style="padding: 0">
-        <div id="modal-box" class="modal-box">
-            <div class="movie-poster" id="movie-poster">
-                <div class="movie-poster__inner">
-                    <h2 class="movie-poster__inner--title">Однажды в голливуде</h2>
-                    <div class="movie-poster__inner--buttons">
-                        <button class="movie-poster__inner--buttons--watch"><svg width="18" height="18"
-                                viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M13.8756 8.46594C14.4266 8.87529 14.4108 9.7053 13.8447 10.0934L6.06546 15.4267C5.40185 15.8817 4.5 15.4066 4.5 14.602L4.5 3.48879C4.5 2.66682 5.4366 2.19588 6.09639 2.68609L13.8756 8.46594Z"
-                                    fill="#161615" />
-                            </svg>
-                            Смотреть</button>
-                        <button class="movie-poster__inner--buttons--fav"><svg width="44" height="44"
-                                viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" y="0.5" width="43" height="43" rx="21.5" stroke="#737373" />
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M25.75 15.25H18.25C17.425 15.25 16.75 15.925 16.75 16.75V28.75L22 26.5L27.25 28.75V16.75C27.25 15.925 26.575 15.25 25.75 15.25ZM25.75 26.5L22 24.865L18.25 26.5V16.75H25.75V26.5Z"
-                                    fill="#E6E6E6" />
-                            </svg>
-                        </button>
-                        <button class="movie-poster__inner--buttons--share"><svg width="44" height="44"
-                                viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" y="0.5" width="43" height="43" rx="21.5" stroke="#737373" />
-                                <g clip-path="url(#clip0_2_1327)">
-                                    <path
-                                        d="M26.5 25.06C25.93 25.06 25.42 25.285 25.03 25.6375L19.6825 22.525C19.72 22.3525 19.75 22.18 19.75 22C19.75 21.82 19.72 21.6475 19.6825 21.475L24.97 18.3925C25.375 18.7675 25.9075 19 26.5 19C27.745 19 28.75 17.995 28.75 16.75C28.75 15.505 27.745 14.5 26.5 14.5C25.255 14.5 24.25 15.505 24.25 16.75C24.25 16.93 24.28 17.1025 24.3175 17.275L19.03 20.3575C18.625 19.9825 18.0925 19.75 17.5 19.75C16.255 19.75 15.25 20.755 15.25 22C15.25 23.245 16.255 24.25 17.5 24.25C18.0925 24.25 18.625 24.0175 19.03 23.6425L24.37 26.7625C24.3325 26.92 24.31 27.085 24.31 27.25C24.31 28.4575 25.2925 29.44 26.5 29.44C27.7075 29.44 28.69 28.4575 28.69 27.25C28.69 26.0425 27.7075 25.06 26.5 25.06ZM26.5 16C26.9125 16 27.25 16.3375 27.25 16.75C27.25 17.1625 26.9125 17.5 26.5 17.5C26.0875 17.5 25.75 17.1625 25.75 16.75C25.75 16.3375 26.0875 16 26.5 16ZM17.5 22.75C17.0875 22.75 16.75 22.4125 16.75 22C16.75 21.5875 17.0875 21.25 17.5 21.25C17.9125 21.25 18.25 21.5875 18.25 22C18.25 22.4125 17.9125 22.75 17.5 22.75ZM26.5 28.015C26.0875 28.015 25.75 27.6775 25.75 27.265C25.75 26.8525 26.0875 26.515 26.5 26.515C26.9125 26.515 27.25 26.8525 27.25 27.265C27.25 27.6775 26.9125 28.015 26.5 28.015Z"
-                                        fill="#E6E6E6" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_2_1327">
-                                        <rect width="18" height="18" fill="white" transform="translate(13 13)" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="movie-poster__inner--rating">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_1_723)">
-                                <path
-                                    d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"
-                                    fill="#E6E6E6" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_1_723">
-                                    <rect width="24" height="24" fill="yellow" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        |
-                        2005
-                    </div>
-                    <div class="movie-poster__inner--restriction">16+</div>
-                    <ul class="movie-poster__inner--categories">
-                        <li>Приключения</li>
-                        <li>Фэнтези</li>
-                        <li>Семейный</li>
-                    </ul>
-                    <div class="movie-poster__inner--description">
-                        <p>Гарри Поттер, Рон и Гермиона возвращаются на четвёртый курс школы чародейства и
-                            волшебства Хогвартс.
-                            При таинственных обстоятельствах Гарри был отобран в число участников опасного
-                            соревнования —
-                            Турнира Трёх Волшебников, однако проблема в том, что все его соперники — намного старше
-                            и сильнее.
-
-                            К тому же, знаки указывают на возвращение Лорда Волдеморта. Вскоре Гарри предстоит
-                            побороться не
-                            только за победу в соревновании, но и, прежде всего, за свою жизнь.</p>
-                    </div>
-                </div>
-
-            </div>
-            <button id="close-modal-btn" class="close-modal-btn"><svg width="32" height="32" viewBox="0 0 32 32"
-                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" rx="16" fill="#737373" />
-                    <path
-                        d="M23 10.41L21.59 9L16 14.59L10.41 9L9 10.41L14.59 16L9 21.59L10.41 23L16 17.41L21.59 23L23 21.59L17.41 16L23 10.41Z"
-                        fill="#090808" />
-                </svg>
-            </button>
-        </div>
-    </dialog> -->
     <button id="show-modal-btn" class="show-modal-btn">Show modal</button>
-    <script src="./js/index.js"></script>
+    <script type="module" src="./js/index.js"></script>
 </body>
 
 </html>

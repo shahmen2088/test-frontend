@@ -1,28 +1,26 @@
-//API Key - e992c620
+import { sortMovies } from './utils.js';
+import { key } from './constants.js';
+import { fetchMovies } from './api.js';
+import { renderMovie } from './components.js';
 
-const key = 'e992c620';
+window.onload = function () {
 
-let searchInput = document.getElementById('input');
-let displaySearchList = document.getElementsByClassName('main-container');
+    let isLoading = false;
+    const searchInput = document.getElementById('input');
+    const displaySearchList = document.getElementsByClassName('main-container');
+    searchInput.addEventListener('input', findMovies);
 
-// fetch('http://www.omdbapi.com/?i=tt3896198&apikey=e992c620')
-//     .then(res => res.json())
-//     .then(data => console.log(data));
+    // Рендеринг фильмов
 
-searchInput.addEventListener('input', findMovies);
+    async function singleFilm() {
+        let urlQueryParams = new URLSearchParams(window.location.search);
+        let id = urlQueryParams.get('id')
+        const response = await fetch(`http://www.omdbapi.com/?i=${'tt21276878'}&apikey=${key}`);
+        const data = await response.json();
 
-// Рендеринг фильмов
+        const { Title, Year, imdbRating, Genre, Plot } = data;
 
-
-async function singleFilm() {
-    let urlQueryParams = new URLSearchParams(window.location.search);
-    let id = urlQueryParams.get('id')
-    const response = await fetch(`http://www.omdbapi.com/?i=${'tt21276878'}&apikey=${key}`);
-    const data = await response.json();
-
-    const { Title, Year, imdbRating, Genre, Plot } = data;
-
-    let output = `
+        let output = `
     <dialog class="modal" style="padding: 0">
         <div id="modal-box" class="modal-box">
             <div class="movie-poster" id="movie-poster">
@@ -98,89 +96,70 @@ async function singleFilm() {
         </div>
     </dialog>`;
 
-
-}
-
-
-
-
-
-async function displayMovieList(movies) {
-    const filteredData = [...movies].sort(function (filmA, filmB) {
-        return parseInt(filmB.Year) - parseInt(filmA.Year);
-    });
-    let output = '';
-    for (i of filteredData) {
-
-        let img = '';
-
-        if (i.Poster != 'N/A') {
-            img = i.Poster;
-        }
-        else {
-            img = 'img/blank-poster.webp';
-        }
-        let id = i.imdbID;
-
-
-        output += `
-        <div class="main-item">
-            <div class="main-poster">
-            <a href="movie.html?id=${id}"><img src=${img} alt="Favourites Poster"></a>
-            </div>
-            <div class="main-details">
-                <div class="main-details-box">
-                    <div>
-                        <p class="main-movie-name"><a href="movie.html?id=${id}">${i.Title}</a></p>
-                    </div>
-                    <div>
-                         <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                         <button id="show-modal-btn" class="show-modal-btn">Show modal</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-       `
+    document.querySelector('#main').innerHTML = output
     }
-    document.querySelector('.main-container').innerHTML = output;
-}
 
-// Поиск фильма 
+    // Рендеринг фильмов 
 
-async function findMovies() {
-    const url = `https://www.omdbapi.com/?s=${(searchInput.value).trim()}&page=1&apikey=${key}`;
-    const res = await fetch(`${url}`);
-    const data = await res.json();
-
-    if (data.Search) {
-        displayMovieList(data.Search)
+    async function displayMovieList(movies) {
+        const filteredData = sortMovies(movies);
+        const output = filteredData.map(renderMovie).join('');
+        document.querySelector('.main-container').innerHTML = output;
+        Array.from(document.querySelectorAll(".main-item")).forEach((item) => {
+            // handleModalOpen
+            item.addEventListener("click", (e) => {
+                e.preventDefault();
+                singleFilm();
+                modal.showModal()
+            });
+        });
     }
-}
 
-/* Модальное окно */
+    // Поиск фильма 
 
-const modal = document.querySelector('dialog')
-const modalBox = document.getElementById('modal-box')
-const showModalBtn = document.getElementById('show-modal-btn')
-const closeModalBtn = document.getElementById('close-modal-btn')
+    async function findMovies() {
+        let data = '';
+        try {
+            isLoading = true;
+            data = await fetchMovies(searchInput.value.trim())
+        } catch (e) {
+            console.log(e);
+        }
+        if (data.Search) {
+            displayMovieList(data.Search)
+        }
+    }
 
-let isModalOpen = false
+    /* Модальное окно */
 
-showModalBtn.addEventListener('click', (e) => {
-    modal.showModal();
-    isModalOpen = true;
-    e.stopPropagation();
-})
+    const modal = document.querySelector('dialog')
+    const modalBox = document.getElementById('modal-box')
+    const showModalBtn = document.getElementById('show-modal-btn')
+    const closeModalBtn = document.getElementById('close-modal-btn')
 
-closeModalBtn.addEventListener('click', () => {
-    modal.close()
-    isModalOpen = false
-})
+    let isModalOpen = false
 
-document.addEventListener('click', (e) => {
-    if (isModalOpen && !modalBox.contains(e.target)) {
+
+    // function showModal(e){
+    //     modal.showModal();
+    //     isModalOpen = true;
+    //     e.stopPropagation();
+    // }
+
+    showModalBtn.addEventListener('click', (e) => {
+        modal.showModal();
+        isModalOpen = true;
+        e.stopPropagation();
+    })
+
+    closeModalBtn.addEventListener('click', () => {
         modal.close()
-    }
-})
+        isModalOpen = false
+    })
 
-
+    document.addEventListener('click', (e) => {
+        if (isModalOpen && !modalBox.contains(e.target)) {
+            modal.close()
+        }
+    })
+}
