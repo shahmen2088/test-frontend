@@ -45,6 +45,7 @@ export class ItcModal {
     this.#elem.dispatchEvent(this.#eventHideModal);
     document.body.style.paddingRight = '';
     document.body.offsetHeight;
+    document.body.style.overflow = '';
     this.#elem.addEventListener('transitionend', () => {
       document.body.style.overflow = '';
     }, { once: true });
