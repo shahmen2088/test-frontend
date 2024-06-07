@@ -12,7 +12,7 @@ export const renderSingleMovie = (data) => {
             <button class="movie-poster__close-button" id="movie-poster__close-button"><img src="./img/images/Button-Big.png" alt="close"></button>
             <h2 class="movie-poster__inner--title">${Title}</h2>
             <div class="movie-poster__inner--buttons">
-                <button class="movie-poster__inner--buttons--watch"><img src="./img/images/Icon (1).png" alt="">
+                <button class="movie-poster__inner--buttons--watch"><img src="./img/images/Icon.png" alt="">
                     Смотреть</button>
                 <button class="movie-poster__inner--buttons--fav"><img src="./img/images/Button-Bookmark.png" alt="">
                 </button>
@@ -38,3 +38,5 @@ export const renderSingleMovie = (data) => {
         
     return movie_poster.outerHTML;
 }
+
+
