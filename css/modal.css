@@ -20,7 +20,7 @@
     display: flex;
     flex-direction: column;
     width: auto;
-    margin: var(--itc-modal-margin);
+    /* margin: var(--itc-modal-margin); */
     margin: 0 auto;
     background-color: #fff;
     background-clip: padding-box;
@@ -55,7 +55,27 @@
     position: relative;
     flex: 1 1 auto;
     /* padding: 1rem; */
-     border-radius: 16px;
+    border-radius: 16px;
     overflow-y: hidden;
-    overflow-wrap: anywhere; 
- }  
+    overflow-wrap: anywhere;
+}
+
+
+@media (max-width: 744px) {
+
+    .itc-modal-scrollable {
+        border-radius: 0;
+    }
+
+    .itc-modal-scrollable {
+        height: 100%;
+    }
+
+    .itc-modal-backdrop {
+        padding-top: 0;
+    }
+
+    .itc-modal-body {
+        border-radius: 0;
+    }
+}

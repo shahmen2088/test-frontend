@@ -2,6 +2,7 @@ export const renderMovies = (movie) => {
     return `
           <div class="main-item">
               <div class="main-poster">
+              
               <a class='movieId' href="movie.html?id=${movie.imdbID}"><img src=${movie.Poster === "N/A" ? "img/blank-poster.webp" : movie.Poster
         } alt="Favourites Poster"></a>
               </div>

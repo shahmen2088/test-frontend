@@ -44,10 +44,17 @@
                         <li class="nav__link"><a href="#">Сериалы</a></li>
                     </ul>
                 </nav>
-                <form>
+                <!-- <form id="form">
                     <input class="header__inner-search" type="search" placeholder="Поиск по сайту" id="input">
                     <button class="header__inner-search--delete">
                         <img src="./img/images/Type=Cancel.png" alt="close">
+                    </button>
+                </form> -->
+                <form class="header__inner__form" id="form">
+                    <input class="header__inner-search" type="search" placeholder="Поиск по сайту" id="input">
+                    <button class="header__inner-search--delete-x" id="header__inner-search--delete-x"> <img src="./img/images/Button=Cancel.png" alt="close"></button>
+                    <button class="header__inner-search--delete" id="header__inner-search--delete">
+                        Очистить
                     </button>
                 </form>
                 <div class="header__inner-buttons">
@@ -71,7 +78,7 @@
 
         <section>
             <div class="container">
-                <h2 class="main__inner-title">Популярные</h2>
+                <h2 class="main__inner-title"></h2>
 
                 <div id="" class="main-container">
                     <!-- Items are displayed here -->
@@ -85,46 +92,35 @@
 
         <ul class="footer__container">
             <li class="footer__item">
-                <div class="footer__item-logo"><img src="./img/images/Type=Home.png" alt="">
-                </div>
-                <span class="footer__item-text">Дом</span>
+                <button><img src="./img/images/Type=Home.png" alt="">
+                    <span class="footer__item-text">Дом</span>
+                </button>
             </li>
             <li class="footer__item">
-                <div class="footer__item-logo"><img src="./img/images/Type=Movie.png" alt="">
-                </div>
-                <span class="footer__item-text">Фильмы</span>
+                <button><img src="./img/images/Type=Movie.png" alt="">
+                    <span class="footer__item-text">Фильмы</span>
+                </button>
             </li>
             <li class="footer__item">
-                <div class="footer__item-logo"><img src="./img/images/Type=Series.png" alt="">
-                </div>
-                <span class="footer__item-text">Сериалы</span>
+                <button>
+                    <img src="./img/images/Type=Series.png" alt="">
+                    <span class="footer__item-text">Сериалы</span>
+                </button>
             </li>
             <li class="footer__item">
-                <div class="footer__item-logo"><img src="./img/images/search bar controls.png" alt="">
-                </div>
-                <span class="footer__item-text">Поиск</span>
+                <button id="footer__button">
+                    <img src="./img/images/search bar controls.png" alt="">
+                    <span class="footer__item-text">Поиск</span>
+                </button>
+
             </li>
             <li class="footer__item">
-                <div class="footer__item-logo"><img src="./img/images/Type=Share.png" alt="">
-                </div>
-                <span class="footer__item-text">Избранное</span>
+                <button><img src="./img/images/Type=Share.png" alt="">
+                    <span class="footer__item-text">Избранное</span>
+                </button>
             </li>
         </ul>
     </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     <script type="module" src="./js/index.js"></script>
 </body>
 

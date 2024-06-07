@@ -3,7 +3,7 @@
     position: fixed;
     align-items: center;
     /* justify-content: space-around; */
-   
+
     width: 100%;
     height: 64px;
     bottom: 0;
@@ -20,4 +20,45 @@
 .footer__item {
     /* width: 148px; */
     text-align: center;
+}
+
+.footer__item-text {
+    font-family: Montserrat, sans-serif;
+
+}
+
+.footer__item button{
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    align-items: center;
+}
+
+
+@media (max-width: 744px) {
+
+    .footer {
+        display: flex;
+    }  
+
+}
+
+
+
+@media (max-width: 428px) {
+    
+    .footer__container {
+        justify-content: space-between;
+    }
+
+    .footer__item-text {
+        font-size: 8px;
+        font-weight: 400;
+    }
+
+    .footer__item {
+        width: 85.6px;
+    }
 }

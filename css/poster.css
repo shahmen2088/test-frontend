@@ -8,10 +8,23 @@
     border-radius: 16px;
     color: var(--color-white);
 
-    background-image: url('../img/Image.png');
-    background-size: 900px;
+    /* background-image: url('../img/Image.png'); */
+    background-size: 900px 470px;
     background-repeat: no-repeat;
 }
+
+
+/* .movie-poster::after {
+    content: "";
+    position: absolute; 
+     top: 0;
+    left: 0; 
+    width: 100%;
+    opacity: 0.95;
+    height: 49%;
+    box-shadow: -3px -137px 17px 10px rgba(22, 22, 21, 1) inset;
+    z-index: 10;
+} */
 
 .movie-poster__inner {
     padding: 40px;
@@ -23,9 +36,15 @@
     margin-bottom: 24px;
 }
 
+.movie-poster__close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
 .movie-poster__inner--buttons {
     display: flex;
-    margin-bottom: 24px;
+    gap: 24px;
 }
 
 .movie-poster__inner--buttons--watch {
@@ -38,14 +57,15 @@
     padding: 0 62px 0 62px;
     background-color: var(--color-white);
     font-weight: 500;
-    margin-right: 24px;
+}
+
+.movie-poster__inner--buttons--watch:hover {
+    background-color: #D22F26;
+    color: var(--color-white);
 }
 
 
 
-.movie-poster__inner--buttons--fav {
-    margin-right: 24px;
-}
 
 .movie-poster__inner--rating {
     display: flex;
@@ -58,7 +78,7 @@
     width: 47px;
     border: 2px solid var(--color-white);
     border-radius: 100px;
-    padding: 4px 12px 4px 12px;
+    padding: 4px 10px 4px 10px;
     margin-bottom: 16px;
 }
 
@@ -81,4 +101,42 @@
 
 .movie-poster__inner--categories li:first-child {
     list-style: none;
+}
+
+
+@media (max-width: 744px) {
+
+    .movie-poster {
+        border-radius: 0;
+        background-size: 744px 470px;
+    }
+
+
+    .movie-poster__inner {
+        padding: 20px;
+    }
+
+    .movie-poster__inner--buttons--watch {
+        justify-content: center;
+        width: 568px;
+    }
+
+
+}
+
+
+
+@media (max-width: 428px) {
+    .movie-poster {
+        background-size: 428px 470px;
+    }
+
+    .movie-poster__inner {
+        padding: 16px;
+    }
+
+    .movie-poster__inner--buttons--watch {
+        width: 260px;
+    }
+
 }

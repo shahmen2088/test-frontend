@@ -5,3 +5,16 @@ export const fetchMovies = async (value) => {
     const res = await fetch(`${url}`);
     return await res.json();
   };
+
+
+  export const fetchMovie = async (id) => {
+    const response = await fetch(`http://www.omdbapi.com/?i=${id}&apikey=${key}`);
+    return await response.json();
+  }
+
+  export const fetchPopularMovies = async () => {
+    const response = await fetch(`http://www.omdbapi.com/?s=popular&type=movie&apikey=${key}`);
+    return await response.json();
+  }
+
+
