@@ -1,8 +1,8 @@
 export const renderSingleMovie = (data) => {
-    const {Poster, Title, Year, imdbRating, Genre, Plot } = data;
+    const { Poster, Title, Year, imdbRating, Genre, Plot } = data;
     const genre = Genre.split(',').map(item => {
         return `<li>${item.trim()}</li>`
-    }).join('');  
+    }).join('');
     const movie_poster = document.createElement('div');
     movie_poster.className = 'movie-poster';
     movie_poster.id = 'movie-poster';
@@ -33,9 +33,9 @@ export const renderSingleMovie = (data) => {
                 <p>${Plot}</p>
             </div>
         </div>`;
-        movie_poster.style.backgroundImage = `url(${Poster})`;
-        movie_poster.innerHTML = movie__poster_inner;
-        
+    movie_poster.style.backgroundImage = `url(${Poster})`;
+    movie_poster.innerHTML = movie__poster_inner;
+
     return movie_poster.outerHTML;
 }
 
